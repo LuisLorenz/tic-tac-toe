@@ -7,6 +7,8 @@
 - def rules
     - ...
 
+
+
 - playstlye 1: player vs computer
 
 - playstyle 2: player vs unbeatable AI
