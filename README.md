@@ -3,9 +3,11 @@
 # basic code
 - def board 
     - 2 dimensional with chaining two range functions 
+    - going for a list comprehension 
 
 - def rules
     - ...
+    - challenge of this project (logic counter)
 
 
 

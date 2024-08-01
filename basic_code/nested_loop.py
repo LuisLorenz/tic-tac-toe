@@ -6,6 +6,7 @@ cols = 3
 for _ in range(rows):
     row = ''
     for _ in range(cols):
-        row += '|__| '
+        row += '|__| ' # for each col the row gets on box 
+        # the whole system repeats 2 more times 
     # print(row.strip()) 
     print(row) 

@@ -16,4 +16,5 @@ cols = 3
 # Erstelle und drucke das Board
 board = create_board(rows, cols)
 print_board(board)
-print(board)
+print(board) # ['|__| |__| |__|', '|__| |__| |__|', '|__| |__| |__|']
+    # in order to simply avoid this formating you can simply create a loop for printing out all the 3 str separately -> smart 
