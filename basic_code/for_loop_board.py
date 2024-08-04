@@ -7,4 +7,4 @@ def board():
         for _ in range(col):
             print('|  |')
 
-board()
+board() # ... 
