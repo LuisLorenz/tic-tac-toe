@@ -69,6 +69,11 @@ def print_board():
     # | 3 | | 4 | | 5 |
     # | 6 | | 7 | | 8 |
 
+
 print_board()
 
+# better board
+    # |   |   |   |
+    # |   |   |   |
+    # |   |   |   |
 
