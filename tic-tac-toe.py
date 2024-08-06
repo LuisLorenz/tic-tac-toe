@@ -24,6 +24,23 @@ def print_index_board():
 # Spielfeld drucken
 
 
+# check winner
+def check_winner(board, player):
+    # check rows 
+    for row in range(rows):
+        if all([board[row * cols + col] == player for col in range(cols)]):
+            return True
+    # check columns
+    for col in range(cols):
+        if all([board[row * cols + col] == player for row in range(rows)]):
+            return True
+    # check diagonals 
+    if all([board[i] == player for i in [0, 4, 8]]):
+        return True
+    if all([board[i] == player for i in [2, 4, 6]]):
+        return True
+    return False
+
 introduction_text ='''
 Welcome to TIC! TAC! TOE!
 '''
@@ -33,6 +50,7 @@ Welcome to TIC! TAC! TOE!
 
 full_board = False
 winner = None 
+
 
 
 while full_board == False and winner == None: 
