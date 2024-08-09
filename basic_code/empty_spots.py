@@ -41,3 +41,21 @@ def get_empty_positions(board):
 #     print("Leere Positionen:", empty_positions)
 
 print_board()
+
+
+# Erklärung:
+# create_empty_board: Diese Funktion erstellt eine Liste mit 9 leeren Zeichenfolgen (' '), die jedes Feld auf dem Board repräsentieren.
+
+# print_board_with_indices: Diese Funktion gibt das Board mit den aktuellen Werten aus (in diesem Fall alle leer).
+
+# get_empty_positions: Diese Funktion gibt eine Liste von Indizes zurück, die alle leeren Felder im Board darstellen.
+
+# Hauptprogramm: Hier wird das Board initialisiert, gedruckt und die leeren Positionen werden ermittelt und ausgegeben.
+
+# Diese Struktur ermöglicht es dir, die Indizes der leeren Felder einfach zu verfolgen und anzuzeigen. Wenn du später Spielfelder mit Werten wie 'X' oder 'O' füllst, wird get_empty_positions nur die Felder zurückgeben, die noch leer sind.
+
+
+
+
+
+
