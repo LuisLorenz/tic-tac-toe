@@ -61,4 +61,16 @@ for i, x in enumerate(empty_board_v2):
 list_v3 = [i for i, x in enumerate(empty_board_v2) if x == ' ']
 print(list(list_v3)) 
 # []
-print(list_v3)
+print(list_v3)  
+# []
+
+# why is this the output? 
+food_basic_list = ['apple', 'banana', 'strawberry', 'X', 'X', 'X', 'X', 'O']
+food_list = ['a fruit' for x in food_basic_list]
+print(food_list) # ['a fruit', 'a fruit', 'a fruit']
+food_list = ['a fruit' for i, x in enumerate(food_basic_list)]
+print(food_list) # ['a fruit', 'a fruit', 'a fruit']
+food_list = ['a fruit' for i, x in enumerate(food_basic_list) if x == 'apple']
+print(food_list) # ['a fruit']
+food_list = ['a fruit' for i, x in enumerate(food_basic_list) if x == 'X']
+print(food_list)

@@ -11,6 +11,8 @@
 #     for row in changed_board:
 #         print(row)
 
+################################################################################################################
+
 # creating frame board
 def print_board():
     rows = 3
@@ -21,7 +23,7 @@ def print_board():
 
 # creating 9 elements (empty spots)
 def create_empty_board():
-    return [' ' for _ in range(9)]
+    return [' ' for _ in range(9)] # list w/ 9 empty spaces 
 
 # creating indices for board
     # board serves as frame 
