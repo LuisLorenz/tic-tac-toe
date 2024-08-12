@@ -73,4 +73,9 @@ print(food_list) # ['a fruit', 'a fruit', 'a fruit']
 food_list = ['a fruit' for i, x in enumerate(food_basic_list) if x == 'apple']
 print(food_list) # ['a fruit']
 food_list = ['a fruit' for i, x in enumerate(food_basic_list) if x == 'X']
-print(food_list)
+print(food_list) # selective printing ...
+
+
+dimension = 9
+empty_list = ['|   |' for x in range(dimension)]
+print(empty_list)
