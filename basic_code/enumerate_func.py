@@ -79,3 +79,5 @@ print(food_list) # selective printing ...
 dimension = 9
 empty_list = ['|   |' for x in range(dimension)]
 print(empty_list)
+
+# next joint it away
