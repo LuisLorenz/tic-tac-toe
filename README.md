@@ -1,6 +1,7 @@
 # tic-tac-toe
 
-# basic code
+## basic code
+- cut all the fancy stuff for the beginning - biggest learnings from challengening foundational code
 - def board 
     - 2 dimensional with chaining two range functions 
     - going for a list comprehension 
@@ -25,7 +26,9 @@
 
 - use the advantage of __init__(self)
 
-# pseudocode
+
+
+## pseudocode
 - ok: board 
 - ok: orientation board
 
@@ -42,3 +45,4 @@
     - ask user if he wants to play as X or O 
 
 - alternating between player after each move
+
