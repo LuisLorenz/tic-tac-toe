@@ -6,4 +6,4 @@ empty_list[1] = new_element
 print(empty_list) # ['|   |', 'Hello', '|   |', '|   |', '|   |', '|   |', '|   |', '|   |', '|   |']
 index = 2
 empty_list[index] = 'X'
-print(empty_list)
+print(empty_list) # ['|   |', 'Hello', 'X', '|   |', '|   |', '|   |', '|   |', '|   |', '|   |']

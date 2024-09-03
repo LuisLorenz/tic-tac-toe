@@ -6,7 +6,7 @@ def check_winner(board, player):
         if all([board[row * cols + col] == player for col in range(cols)]):
             return True
     # starting w/ the first row 
-    # 0 + 0 -> 0, 1, 2 
+    # 0 + 0 -> 0, 1, 2 i / x = 'X' for each of the 3 places 
     # 3, 4, 5
     # 6, 7, 8
 
