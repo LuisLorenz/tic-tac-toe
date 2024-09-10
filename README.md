@@ -1,17 +1,18 @@
 # tic-tac-toe
 
 ## basic code
-- cut all the fancy stuff for the beginning - biggest learnings from challengening foundational code
+- generally, cut all the fancy stuff for the beginning - biggest learnings from challengening foundational code
+ 
 - def board 
     - 2 dimensional with chaining two range functions 
     - going for a list comprehension 
 
-- oriantation board 
-    |0| |1| |2|
-    |3| |4| |5|
-    |6| |7| |8|
+- oriantation board: 
+    | 0 | 1 | 2 |
+    | 3 | 4 | 5 |
+    | 6 | 7 | 8 |
 
-- def rules
+- in progress: def rules
     - ...
     - challenge of this project (logic counter)
 

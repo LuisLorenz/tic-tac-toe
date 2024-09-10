@@ -11,7 +11,7 @@ def print_board():
     cols = 3
     board = [(('|   |   |   |')) for _ in range(rows)]
     for row in board:
-        print(row)
+        print(row) # 1x row equals one element in the board list = one row
 
 # board w/ indices 
 def print_index_board():
@@ -20,10 +20,16 @@ def print_index_board():
     index_board = [(f'| {i*cols} | {i*cols+1} | {i*cols+2} |') for i in range(rows)]
     for row_2 in index_board:
         print(row_2)
-
+            # | 0 | 1 | 2 |
+            # | 3 | 4 | 5 |
+            # | 6 | 7 | 8 |
 # check winner
-def check_winner(board, player):
+def check_winner(board, player): # continue here
     
+    # var
+    rows = 3
+    cols = 3
+
     # check rows 
     for row in range(rows):
         if all([board[row * cols + col] == player for col in range(cols)]):
