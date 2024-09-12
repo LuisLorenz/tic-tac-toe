@@ -23,6 +23,7 @@ def print_index_board():
             # | 0 | 1 | 2 |
             # | 3 | 4 | 5 |
             # | 6 | 7 | 8 |
+
 # check winner
 def check_winner(board, player): 
     
@@ -40,46 +41,32 @@ def check_winner(board, player):
             # 3) X[6] X[7] X[8]
             return True
 
-    # check cols # continue here
-        # options
-            # 1) X[0] X[3] X[6] 
-            # 2) X[1] X[4] X[7]
-            # 3) X[3] X[5] X[8]
-        # row: switching makes not sense because each option is in one row
-        # col: 0,1,2 
-            # board[row*cols+ col] == x for row in range(rows)
-                # col is right: 0,1,2 
-                # row*cols
-                    # 0
-                    # 3
-                    # 6 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # check columns
     for col in range(cols):
         if all([board[row * cols + col] == player for row in range(rows)]):
+            # options
+                # 1) X[0] X[3] X[6] 
+                # 2) X[1] X[4] X[7]
+                # 3) X[3] X[5] X[8]
+            # row: switching makes not sense because each option is in one row
+            # col: 0,1,2 
+                # board[row*cols+ col] == x for row in range(rows)
+                    # col is right: 0,1,2 
+                    # row*cols
+                        # 0
+                        # 3
+                        # 6 
             return True
    
     # check diagonals 
     if all([board[i] == player for i in [0, 4, 8]]):
+        # only one option for this diagonal 
         return True
     if all([board[i] == player for i in [2, 4, 6]]):
         return True
     return False
 
-# empty spots list
+# empty spots list # continue here 
 empty_spots = [] 
     # list that keeps the spots[i] that are free 
     # each time an empty spots gets exchanges through a player letter the spot[i] gets removed from that list
