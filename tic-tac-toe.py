@@ -69,10 +69,14 @@ def check_winner(board, player):
 # empty spots list # continue here 
 empty_spots = [] 
     # list that keeps the spots[i] that are free 
-    # each time an empty spots gets exchanges through a player letter the spot[i] gets removed from that list
+    # each time an empty spots gets exchanged through a player letter the spot[i] gets removed from that list
+    # e.g.: X > i = 7 
+        # X[7] & board[7] gets removes from empty_spots[] 
+        # empty_sport[... i = 0,1,2,3,4,5,6,8]
 
 # comuter move (probably a __init__(self) would the best choice for efficient code (level 2))
 
+# when winner = False & empyt_spots[] has still elements > ... 
 def valid_move():
     if user_move in empty_spots():
         return True

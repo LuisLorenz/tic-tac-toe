@@ -47,3 +47,21 @@
 
 - alternating between player after each move
 
+...
+
+## checklist
+- [x] basic board
+- [x] basic board with indices for orientation
+- [x] checking algorithm for winner
+- [x] valid move check structure
+- [ ] create empty_spots list 
+- [ ]
+- [ ]
+
+## upgrades
+- [ ] last move should be filled out automatically because it is fix concering a player move 
+- [ ] create an unbeatable computer AI 
+
+
+
+
