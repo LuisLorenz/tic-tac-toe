@@ -72,13 +72,20 @@ cols = 3
 board_list = [[' ' for x in range(cols)] for y in range(rows)]
 print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 
-# empty spots list # continue here 
+# empty spots list 
 empty_spots = [] 
     # list that keeps the spots[i] that are free 
     # each time an empty spots gets exchanged through a player letter the spot[i] gets removed from that list
     # e.g.: X > i = 7 
         # X[7] & board[7] gets removes from empty_spots[] 
         # empty_sport[... i = 0,1,2,3,4,5,6,8]
+
+for row in range(rows): 
+         for col in range (cols): 
+            if board_list[row][col] == ' ':
+                empty_spots.append((row, col)) # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+# each time a spot gets used I can simply remove that coordinate form that empyt_spots_list 
+
 
 # comuter move (probably a __init__(self) would the best choice for efficient code (level 2))
 
@@ -94,7 +101,10 @@ def computer_move():
     move = random.choice(empty_spots)
 
 def user_move(): 
-    user_move = int(input('Make a move: '))
+    user_move = int(input('Make a move: ')) 
+        # user input should be a num from 0-8 
+        # each number is assigned to a coordination num[col][row]
+        # coordination is the checked w/ valid_move 
     if valid_move(user_move) == True:
     # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
         board[user_move] = user_player
@@ -123,4 +133,5 @@ while full_board == False and check_winner == False:
     print('')
     move_player_1 = input('Make a move: ')
 
-    
+for x in range
+    print(hello)

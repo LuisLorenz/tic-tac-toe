@@ -71,7 +71,9 @@ empty_spots = []
 for row in range(rows): 
          for col in range (cols): 
             if board_list[row][col] == ' ':
-                empty_spots.append((row, col))
+                empty_spots.append((row, col)) 
+                # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+                # I need an extra pair of parentheses for combining the two arguments in to one element for the append function 
         
 print(empty_spots)
 

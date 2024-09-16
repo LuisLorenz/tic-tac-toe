@@ -6,7 +6,9 @@ coordination_list = []
 for x in range(0,9) and y in empty_spots():
     coordination_list.append((x, y))
 
-print(c)
 
+
+variable = x 
+print(var
 
 

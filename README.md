@@ -54,8 +54,8 @@
 - [x] basic board with indices for orientation
 - [x] checking algorithm for winner
 - [x] valid move check structure
-- [ ] create empty_spots list 
-- [ ]
+- [x] create empty_spots list 
+- [ ] create user player move 
 - [ ]
 
 ## upgrades
