@@ -35,18 +35,44 @@ print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 # enumerated_list = [enumerate([x for board_list[row][col]]for row in range(rows) for col in range (cols))]
 # print (enumerated_list)
 
-for row in range(rows):
-        for col in range (cols):              
-            enumerated_list = enumerate(board_list[row][col])
-    
-print (enumerated_list)
+# for row in range(rows): # 0, 1, 2
+#         for col in range (cols): # 0, 1, 2              
+#             enumerated_list = enumerate(board_list[row][col])
+#             # print(list(enumerated_list))
+# print(list(enumerated_list))
 
-You're close! However, enumerate should be used to get both the index and the value. Also, you should store the enumerated values in a list. Here's a hint: you can create a list of tuples where each tuple contains the index and the corresponding board position.
+# enumerate should be used to get both the index and the value. Also, you should store the enumerated values in a list. Here's a hint: you can create a list of tuples where each tuple contains the index and the corresponding board position.
+# idea: [((' ')(0)), ((' ')(1)), ((' ')(2)), ...]
 
-How would you modify your code to store these tuples in a list?
+
+# How would you modify your code to store these tuples in a list?
 
 # That sounds like a good plan! 
 # Assigning numbers to each spot and then asking the player to choose a spot is a clear way to handle user input. 
 # How would you go about mapping the numbers 0 to 8 to the corresponding row and column indices on the board?
+
+
+## creating a tuple
+# board_tuple = board_list
+# for row in range(rows): # 0, 1, 2
+#         for col in range (cols): # 0, 1, 2              
+#             enumerated_list = enumerate(board_tuple[row][col])
+#             print(list(enumerated_list))
+
+## checking if spot is empty
+
+
+# for x,y  in board_list[rows][cols]: 
+#     if board_list[x][y] == ' ':
+#         empty_spots.append(board_list[x][y])
+
+
+empty_spots = []
+for row in range(rows): 
+         for col in range (cols): 
+            if board_list[row][col] == ' ':
+                empty_spots.append((row, col))
+        
+print(empty_spots)
 
 player_move = input('Choose a spot: ') # number 

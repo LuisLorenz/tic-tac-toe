@@ -66,6 +66,12 @@ def check_winner(board, player):
         return True
     return False
 
+# init board
+rows = 3
+cols = 3
+board_list = [[' ' for x in range(cols)] for y in range(rows)]
+print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+
 # empty spots list # continue here 
 empty_spots = [] 
     # list that keeps the spots[i] that are free 
