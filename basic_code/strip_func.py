@@ -12,3 +12,4 @@ text = "  Hallo, Welt!  "
 print(f"Original: '{text}'")
 print(f"Mit lstrip(): '{text.lstrip()}'")
 print(f"Mit rstrip(): '{text.rstrip()}'")
+

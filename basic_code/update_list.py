@@ -8,4 +8,4 @@ index = 2
 empty_list[index] = 'X'
 print(empty_list) # ['|   |', 'Hello', 'X', '|   |', '|   |', '|   |', '|   |', '|   |', '|   |']
 
-empty_list
+em
