@@ -55,7 +55,7 @@
 - [x] checking algorithm for winner
 - [x] valid move check structure
 - [x] create empty_spots list 
-- [ ] create user player move 
+- [ ] create user player move: challenge: transfer input player into a coordinate for checking valid move
 - [ ]
 
 ## upgrades
