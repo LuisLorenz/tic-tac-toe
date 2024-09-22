@@ -70,7 +70,10 @@ def check_winner(board, player):
 rows = 3
 cols = 3
 board_list = [[' ' for x in range(cols)] for y in range(rows)]
-print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']] 
+# access first list with i (row)
+# access sec. list with j (col) 
+# coordinates (i/j) (row/col) 
 
 # empty spots list 
 empty_spots = [] 
@@ -85,23 +88,32 @@ for row in range(rows):
                 empty_spots.append((row, col)) # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
 # each time a spot gets used I can simply remove that coordinate form that empyt_spots_list 
 
+# number x -> row_x / col_x 
+def get_coordinates(x): 
+    row = x // 3 
+    col = x % 3 
+    return row, col
 
 # when winner = False & empyt_spots[] has still elements > ... 
-def valid_move(): # continue here 
-    if user_move in empty_spots():
+def valid_move(): 
+    ## check valide number
+        # also check that the input was an int from 0 - 8 
+        # therefore I can check if user_move is in the list[0, 1, ... , 8]
+        # false -> try again
+
+    get_coordinates(user_move)
+    if board_list[row][col] == ' ': # test this code 
         return True
     else:
         return False 
-        print('Your input was invalid. Please try again!')
+        print('Your chosen spot is not empty. Please try again.')
 
+   
 def computer_move():
     move = random.choice(empty_spots)
 
 def user_move(): 
-    user_move = int(input('Make a move: ')) 
-        # user input should be a num from 0-8 
-        # each number is assigned to a coordination num[col][row]
-        # coordination is the checked w/ valid_move 
+    user_move = int(input('Make a move (number from 0-8): ')) 
     if valid_move(user_move) == True:
     # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
         board[user_move] = user_player
