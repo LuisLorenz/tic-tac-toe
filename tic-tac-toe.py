@@ -79,7 +79,6 @@ empty_spots = []
     # e.g.: X > i = 7 
         # X[7] & board[7] gets removes from empty_spots[] 
         # empty_sport[... i = 0,1,2,3,4,5,6,8]
-
 for row in range(rows): 
          for col in range (cols): 
             if board_list[row][col] == ' ':
@@ -87,10 +86,8 @@ for row in range(rows):
 # each time a spot gets used I can simply remove that coordinate form that empyt_spots_list 
 
 
-# comuter move (probably a __init__(self) would the best choice for efficient code (level 2))
-
 # when winner = False & empyt_spots[] has still elements > ... 
-def valid_move():
+def valid_move(): # continue here 
     if user_move in empty_spots():
         return True
     else:
@@ -111,10 +108,6 @@ def user_move():
 
     else: 
         pass 
-
-
-
-
 
 
 # intro 
