@@ -55,8 +55,10 @@
 - [x] checking algorithm for winner
 - [x] valid move check structure
 - [x] create empty_spots list 
-- [ ] create user player move: challenge: transfer input player into a coordinate for checking valid move
-- [ ]
+- [x] create user player move: challenge: transfer input player into a coordinate for checking valid move
+- [ ] check valid move (coordinates)
+- [x] check number 0-8 with a list ... 
+- [ ] 
 
 ## upgrades
 - [ ] last move should be filled out automatically because it is fix concering a player move 

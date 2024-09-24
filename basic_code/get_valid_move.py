@@ -73,3 +73,5 @@ def get_coordinates(x):
 user_number = int(input('0-8'))
 print('user_number')
 print(get_coordinates(user_number))
+
+# function works, yeah 
