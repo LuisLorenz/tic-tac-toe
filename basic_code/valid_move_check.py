@@ -21,7 +21,7 @@ def get_coordinates(num_input):
     return row, col
 
 def valid_move(num_input): 
-    row, col = get_coordinates(num_input)
+    row, col = get_coordinates(num_input) # maybe the solution 
     if board_list[row][col] == ' ': # test this code 
         return True
     else:
@@ -31,4 +31,4 @@ def valid_move(num_input):
 
 user_num = int(input('Make a move (number from 0-8): '))
 print(valid_move(user_num))
-# always True
+# some negative number return also True (-2 etc.)

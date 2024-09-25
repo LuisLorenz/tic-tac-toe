@@ -89,19 +89,22 @@ for row in range(rows):
 # each time a spot gets used I can simply remove that coordinate form that empyt_spots_list 
 
 # number x -> row_x / col_x 
-def get_coordinates(x): 
-    row = x // 3 
-    col = x % 3 
+def get_coordinates(num_input): 
+    row = num_input // 3 
+    col = num_input % 3 
     return row, col
 
 # when winner = False & empyt_spots[] has still elements > ... 
-def valid_move(): 
-    ## check valide number
-        # also check that the input was an int from 0 - 8 
-        # therefore I can check if user_move is in the list[0, 1, ... , 8]
-        # false -> try again
 
-    get_coordinates(user_move)
+num_list = [0,1,2,3,4,5,6,7,8]
+def get_valid_num(num_input):
+    if num_input in num_list: 
+        return True 
+    else:
+        return False 
+
+def valid_move(num_input): 
+    row, col = get_coordinates(num_input)
     if board_list[row][col] == ' ': # test this code 
         return True
     else:
@@ -112,11 +115,14 @@ def valid_move():
 def computer_move():
     move = random.choice(empty_spots)
 
-def user_move(): 
-    user_move = int(input('Make a move (number from 0-8): ')) 
-    if valid_move(user_move) == True:
-    # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
-        board[user_move] = user_player
+def user_move(user_player): 
+    user_num = int(input('Make a move (number from 0-8): ')) 
+    if get_valid_num(user_num) == True:
+        if valid_move(user_num) == True:
+        # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
+            row, col = get_coordinates(user_num) # maybe __init__(self) ...? 
+            board_list[row][col] = user_player
+        print(board_list)
 
     else: 
         pass 
@@ -136,7 +142,7 @@ while full_board == False and check_winner == False:
     print('')
     print_index_board()
     print('')
-    move_player_1 = input('Make a move: ')
 
-for x in range
-    print(hello)
+    # make a move
+    user_move('X')
+

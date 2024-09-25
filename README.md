@@ -56,7 +56,7 @@
 - [x] valid move check structure
 - [x] create empty_spots list 
 - [x] create user player move: challenge: transfer input player into a coordinate for checking valid move
-- [ ] check valid move (coordinates)
+- [ ] check valid move (coordinates) with empty list
 - [x] check number 0-8 with a list ... 
 - [ ] 
 
