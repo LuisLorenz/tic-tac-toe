@@ -75,7 +75,7 @@ print(board_list) # [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 # access sec. list with j (col) 
 # coordinates (i/j) (row/col) 
 
-# empty spots list 
+## empty spots list 
 empty_spots = [] 
     # list that keeps the spots[i] that are free 
     # each time an empty spots gets exchanged through a player letter the spot[i] gets removed from that list
@@ -120,7 +120,9 @@ def user_move(user_player):
     if get_valid_num(user_num) == True:
         if valid_move(user_num) == True:
         # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
-            row, col = get_coordinates(user_num) # maybe __init__(self) ...? 
+            row, col = get_coordinates(user_num) 
+                # calling the values and storing them in var 
+                # getting them outside for the sub func
             board_list[row][col] = user_player
         print(board_list)
 

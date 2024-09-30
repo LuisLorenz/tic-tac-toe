@@ -32,3 +32,4 @@ def valid_move(num_input):
 user_num = int(input('Make a move (number from 0-8): '))
 print(valid_move(user_num))
 # some negative number return also True (-2 etc.)
+# not relevant because of the fact that all the input numbers are already checked (0-8)
