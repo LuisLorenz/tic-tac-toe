@@ -6,12 +6,17 @@ board_list = [[' ' for x in range(cols)] for y in range(rows)]
 
 def formated_board_list(): 
     for x in board_list:
-        y = ' | '.join(x)
+        y = '| ' + ' | '.join(x) + ' |'
+        # |   |   |   |
+        # |   |   |   |
+        # |   |   |   |
+
+        # print(x)
         # [' ', ' ', ' ']
         # [' ', ' ', ' ']
         # [' ', ' ', ' ']
         
-        # first step
+        # y = ' | '.join(x)
             #   |   |  
             #   |   |  
             #   |   |  
@@ -24,5 +29,12 @@ def formated_board_list():
 
 
 formated_board_list()
+
+def formated_board_list(): 
+    for x in board_list:
+        formated_board_string = '| ' + ' | '.join(x) + ' |'
+        print(formated_board_string)
+
+
 
 

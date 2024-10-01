@@ -56,9 +56,18 @@
 - [x] valid move check structure
 - [x] create empty_spots list 
 - [x] create user player move: challenge: transfer input player into a coordinate for checking valid move
-- [ ] check valid move (coordinates) with empty list
 - [x] check number 0-8 with a list ... 
-- [ ] 
+- [x] format board_list into the format for the actual board 
+    - join.x(y) 
+        - '|' + 'X' + ' | ' + 'X' + ' | ' + 'X' + ' |' 
+    - print each row with x in range(0,2) 
+- [x] check valid move (coordinates) with empty list: update this list
+- [x] Alternate player moves 
+- [x] Assign player symbole to player_name - tell which players turn it is -> keep it simple 
+- [ ] implement check_winner func 
+- [ ]
+- [ ]
+- [ ]
 
 ## upgrades
 - [ ] last move should be filled out automatically because it is fix concering a player move 
