@@ -64,8 +64,8 @@
 - [x] check valid move (coordinates) with empty list: update this list
 - [x] Alternate player moves 
 - [x] Assign player symbole to player_name - tell which players turn it is -> keep it simple 
-- [ ] implement check_winner func 
-- [ ]
+- [x] implement check_winner func 
+- [ ] implement ending text & print final board 
 - [ ]
 - [ ]
 

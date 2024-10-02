@@ -53,44 +53,30 @@ for row in range(rows):
 
 # check winner
 def check_winner(board_list, player): 
-    # this function checks the spots in the init_board
-    
-    # var
     rows = 3
     cols = 3
 
     # check rows 
-    for row in range(rows): # 0,1,2 
-        if all([board_list[row * cols + col] == player for col in range(cols)]): # 0,1,2 
-            # 3 options
-            # 0 + 0 = X 
-            # 1) X[0] X[1] X[2] for one row
-            # 2) X[3] X[4] X[5]
-            # 3) X[6] X[7] X[8]
+        # 0/1,2,3
+        # 1/1,2,3
+        # 2/1,2,3
+    for row in range(rows): 
+        if all(board_list[row][col] == player for col in range(cols)):
+            # here the all() is includes the changing value from col -> 0/1,2,3
             return True
 
     # check columns
+        # 1,2,3/0
+        # 1,2,3/1
+        # 1,2,3/2
     for col in range(cols):
-        if all([board_list[row * cols + col] == player for row in range(rows)]):
-            # options
-                # 1) X[0] X[3] X[6] 
-                # 2) X[1] X[4] X[7]
-                # 3) X[3] X[5] X[8]
-            # row: switching makes not sense because each option is in one row
-            # col: 0,1,2 
-                # board[row*cols+ col] == x for row in range(rows)
-                    # col is right: 0,1,2 
-                    # row*cols
-                        # 0
-                        # 3
-                        # 6 
+        if all([board_list[row][col] == player for row in range(rows)]):
             return True
    
     # check diagonals 
-    if all([board_list[i] == player for i in [0, 4, 8]]):
-        # only one option for this diagonal 
+    if all([board_list[row][col] == player for i in [(0,0),(1,1),(2,2)]]):
         return True
-    if all([board_list[i] == player for i in [2, 4, 6]]):
+    if all([board_list[row][col] == player for i in [(0,2),(1,1),(2,0)]]):
         return True
     return False
 
@@ -156,19 +142,19 @@ Welcome to TIC! TAC! TOE!
 
 # while game loop 
 full_board = False
-# check_winner = False 
+winner = False 
 player = 'x'
 
-while full_board == False: # and check_winner == False: 
+while full_board == False and winner == False: 
     formated_board_list()
     print_index_board()
     print(f"It's {player}'s turn.")
     user_move(player)
-    check_winner(board_list, player)
+    winner = check_winner(board_list, player)
  
     if player == 'x':
         player = 'o'
     else: 
         player = 'x' 
             
-
+print(f'The winner is {winner}.') # continue here 
