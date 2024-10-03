@@ -74,11 +74,12 @@ def check_winner(board_list, player):
             return True
    
     # check diagonals 
-    if all([board_list[row][col] == player for i in [(0,0),(1,1),(2,2)]]):
+    if all([board_list[row][col] == player for row, col in [(0,0),(1,1),(2,2)]]):
         return True
-    if all([board_list[row][col] == player for i in [(0,2),(1,1),(2,0)]]):
+    elif all([board_list[row][col] == player for row, col in [(0,2),(1,1),(2,0)]]):
         return True
-    return False
+    else: 
+        return False
 
 ## formating board_list 
 def formated_board_list(): 
@@ -133,7 +134,17 @@ def user_move(player):
     else: 
         print('Your input number was invalid. Please try again.')
 
-
+def full_board(board_list):
+    # when there are no ' ' in board_list return True 
+    # for nested for loop that goes through all options (row, col)
+    rows = 3
+    cols = 3 
+    for row in range(rows): 
+        for col in range(cols): 
+            if board_list[row][col] == ' ': # test this code 
+                return False
+                break
+    return True  
 
 # intro 
 introduction_text ='''
@@ -141,20 +152,29 @@ Welcome to TIC! TAC! TOE!
 '''
 
 # while game loop 
-full_board = False
-winner = False 
 player = 'x'
+winner_player = None
 
-while full_board == False and winner == False: 
+while True: 
     formated_board_list()
     print_index_board()
     print(f"It's {player}'s turn.")
     user_move(player)
-    winner = check_winner(board_list, player)
- 
+    if check_winner(board_list, player) == True: 
+        winner_player = player 
+        break
+    if full_board(board_list) == True:
+        tie = True 
+        break
     if player == 'x':
         player = 'o'
     else: 
         player = 'x' 
-            
-print(f'The winner is {winner}.') # continue here 
+
+formated_board_list()
+if winner_player == 'x':    
+    print(f'The winner is {winner_player}.') # continue here 
+elif winner_player == 'o': 
+    print(f'Sorry, you lost. The winner is {winner_player}.')
+elif tie == True: 
+    print("It's a tie'")

@@ -65,8 +65,10 @@
 - [x] Alternate player moves 
 - [x] Assign player symbole to player_name - tell which players turn it is -> keep it simple 
 - [x] implement check_winner func 
-- [ ] implement ending text & print final board 
-- [ ]
+- [x] implement ending text & print final board 
+- [x] fixing check winner bugs
+- [x] create full_board_check 
+- [ ] formating board list to '-' all the empty spots
 - [ ]
 
 ## upgrades
