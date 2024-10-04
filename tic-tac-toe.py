@@ -134,6 +134,16 @@ def user_move(player):
     else: 
         print('Your input number was invalid. Please try again.')
 
+def filled_board_list():
+    rows = 3
+    cols = 3 
+    for row in range(rows): 
+        for col in range(cols): 
+            if board_list[row][col] == ' ':
+                board_list[row][col] = '-'
+    formated_board_list()
+
+
 def full_board(board_list):
     # when there are no ' ' in board_list return True 
     # for nested for loop that goes through all options (row, col)
@@ -150,31 +160,58 @@ def full_board(board_list):
 introduction_text ='''
 Welcome to TIC! TAC! TOE!
 '''
+x_wins = 0
+o_wins = 0
 
-# while game loop 
-player = 'x'
-winner_player = None
+def game():
+    # while game loop 
+    player = 'x'
+    winner_player = None
+    
+
+    # game loop 
+    while True: 
+        formated_board_list()
+        print_index_board()
+        print(f"It's {player}'s turn.")
+        user_move(player)
+        if check_winner(board_list, player) == True: 
+            winner_player = player 
+            break
+        if full_board(board_list) == True:
+            tie = True 
+            break
+        if player == 'x':
+            player = 'o'
+        else: 
+            player = 'x' 
+
+
+    filled_board_list()
+    if winner_player == 'x':  
+        x_wins +=1   
+        print(f'The winner is {winner_player}.') 
+    elif winner_player == 'o':
+        o_wins +=1  
+        print(f'Sorry, you lost. The winner is {winner_player}.')
+    elif tie == True: 
+        print("It's a tie.")
+
+    print(f'''Wins:
+    x: {x_wins}
+    o: {o_wins}
+            ''')
+
+# intro ...
+
+game()
 
 while True: 
-    formated_board_list()
-    print_index_board()
-    print(f"It's {player}'s turn.")
-    user_move(player)
-    if check_winner(board_list, player) == True: 
-        winner_player = player 
-        break
-    if full_board(board_list) == True:
-        tie = True 
-        break
-    if player == 'x':
-        player = 'o'
-    else: 
-        player = 'x' 
+    play_again = input('Do you want to play again?: y/n')
+    if play_again == 'y':
+        game()
+    elif play_again == 'n':
+        break 
+    else:
+        print('Your input was invalid. Please try again.')
 
-formated_board_list()
-if winner_player == 'x':    
-    print(f'The winner is {winner_player}.') # continue here 
-elif winner_player == 'o': 
-    print(f'Sorry, you lost. The winner is {winner_player}.')
-elif tie == True: 
-    print("It's a tie'")
