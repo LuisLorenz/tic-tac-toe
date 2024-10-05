@@ -68,8 +68,18 @@
 - [x] implement ending text & print final board 
 - [x] fixing check winner bugs
 - [x] create full_board_check 
-- [ ] formating board list to '-' all the empty spots
-- [ ]
+- [x] formating board list to '-' all the empty spots
+- [x] create a score board 
+- [ ] resetting board_list when playing another time 
+- [ ] implement player vs player 
+- [ ] creating v2 with less notes for other play modes
+
+
+- [ ] work on modes 
+    - [ ] 
+    - [ ]
+    - [ ]
+    - [ ]
 
 ## upgrades
 - [ ] last move should be filled out automatically because it is fix concering a player move 

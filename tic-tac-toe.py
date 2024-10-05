@@ -26,6 +26,11 @@ def print_index_board():
     print('')
 
 
+def init_board():
+    rows = 3
+    cols = 3
+    board_list = [[' ' for x in range(cols)] for y in range(rows)]
+    return board_list
 
 # init board
 rows = 3
@@ -116,23 +121,32 @@ def computer_move():
     move = random.choice(empty_spots)
 
 def user_move(player): 
-    user_num = int(input('Make a move (number from 0-8): ')) 
-    if get_valid_num(user_num) == True:
-        if valid_move(user_num) == True:
-        # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
-            row, col = get_coordinates(user_num) 
-                # calling the values and storing them in var 
-                # getting them outside for the sub func
-            board_list[row][col] = player
-            empty_spots.remove((row, col))
-        # print(board_list)
-            # do not print the board_list but the actual board 
-            # therefore I have to format the board_list to the format of the actual board 
+    while True:
+        user_num = int(input('Make a move (number from 0-8): ')) 
+        if get_valid_num(user_num) == True:
+            if valid_move(user_num) == True:
+            # at this point I want to exchange the empty spot w/ the i(user_move) in board() 
+                row, col = get_coordinates(user_num) 
+                    # calling the values and storing them in var 
+                    # getting them outside for the sub func
+                board_list[row][col] = player
+                empty_spots.remove((row, col))
+                break
+            # print(board_list)
+                # do not print the board_list but the actual board 
+                # therefore I have to format the board_list to the format of the actual board 
 
+            else: 
+                print('This spots is already taken. Please try again.')
         else: 
-            print('This spots is already taken. Please try again.')
-    else: 
-        print('Your input number was invalid. Please try again.')
+            print('Your input number was invalid. Please try again.')
+
+    # looping move question until the valid move = True 
+        # while valid == False: 
+            # ... 
+            #     ...
+            #         valid = True 
+            #         try out break
 
 def filled_board_list():
     rows = 3
@@ -156,14 +170,13 @@ def full_board(board_list):
                 break
     return True  
 
-# intro 
-introduction_text ='''
-Welcome to TIC! TAC! TOE!
-'''
+
 x_wins = 0
 o_wins = 0
 
 def game():
+    global x_wins, o_wins
+
     # while game loop 
     player = 'x'
     winner_player = None
@@ -201,14 +214,27 @@ def game():
     x: {x_wins}
     o: {o_wins}
             ''')
+    return x_wins, o_wins
 
 # intro ...
+introduction_text ='''
+Welcome to TIC! TAC! TOE!
+'''
+print(introduction_text)
+
+# choose mode
+    # 1) player vs player 
+    # 2) player vs random computer player 
+    # 3) player vs AI 
+    # 4) random computer player vs AI 
+    # 5) random computer player vs random computer player / for visual represenation
 
 game()
 
 while True: 
     play_again = input('Do you want to play again?: y/n')
     if play_again == 'y':
+        init_board()
         game()
     elif play_again == 'n':
         break 
