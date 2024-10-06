@@ -5,14 +5,6 @@ import time
 user_player = 'x'
 computer_player = 'o'
 
-## board 
-def print_board(): 
-    rows = 3
-    cols = 3
-    board = [(('|   |   |   |')) for _ in range(rows)]
-    for row in board:
-        print(row) # 1x row equals one element in the board list = one row
-
 ## board w/ indices 
 def print_index_board():
     rows = 3
@@ -32,6 +24,18 @@ def init_board():
     board_list = [[' ' for x in range(cols)] for y in range(rows)]
     return board_list
 
+    # Do you want to play again?: y/ny
+    # | - | x | o |
+    # | x | o | x |
+    # | o | - | - |
+
+    # | 0 | 1 | 2 |
+    # | 3 | 4 | 5 |
+    # | 6 | 7 | 8 |
+
+# It's x's turn.
+# Make a move (number from 0-8): 
+
 # init board
 rows = 3
 cols = 3
@@ -48,10 +52,11 @@ empty_spots = []
     # e.g.: X > i = 7 
         # X[7] & board[7] gets removes from empty_spots[] 
         # empty_sport[... i = 0,1,2,3,4,5,6,8]
-for row in range(rows): 
-         for col in range (cols): 
-            if board_list[row][col] == ' ':
-                empty_spots.append((row, col)) # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+def reset_empty_spots_list(): 
+    for row in range(rows): 
+            for col in range (cols): 
+                if board_list[row][col] == ' ':
+                    empty_spots.append((row, col)) # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
 # each time a spot gets used I can simply remove that coordinate form that empyt_spots_list 
 # this code runs only once in the beginning but it must be run for each move
 # better simply remove exactely the move from the empty_spots list
@@ -170,12 +175,21 @@ def full_board(board_list):
                 break
     return True  
 
+def reset_board():
+    rows = 3
+    cols = 3 
+    for row in range(rows): 
+        for col in range(cols): 
+            board_list[row][col] = ' '
 
 x_wins = 0
 o_wins = 0
 
 def game():
     global x_wins, o_wins
+
+    reset_board()
+    reset_empty_spots_list()
 
     # while game loop 
     player = 'x'
@@ -232,9 +246,9 @@ print(introduction_text)
 game()
 
 while True: 
-    play_again = input('Do you want to play again?: y/n')
+    play_again = input('Do you want to play again? (y/n): ')
     if play_again == 'y':
-        init_board()
+        # init_board()
         game()
     elif play_again == 'n':
         break 
