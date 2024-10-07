@@ -1,10 +1,6 @@
 import random
 import time
 
-## easy player
-user_player = 'x'
-computer_player = 'o'
-
 ## board w/ indices 
 def print_index_board():
     rows = 3
@@ -16,13 +12,6 @@ def print_index_board():
             # | 3 | 4 | 5 |
             # | 6 | 7 | 8 |
     print('')
-
-
-def init_board():
-    rows = 3
-    cols = 3
-    board_list = [[' ' for x in range(cols)] for y in range(rows)]
-    return board_list
 
     # Do you want to play again?: y/ny
     # | - | x | o |
@@ -120,10 +109,6 @@ def valid_move(num_input):
     else:
         return False 
         print('Your chosen spot is not empty. Please try again.')
-
-   
-def computer_move():
-    move = random.choice(empty_spots)
 
 def user_move(player): 
     while True:

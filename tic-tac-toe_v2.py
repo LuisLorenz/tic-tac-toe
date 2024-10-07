@@ -54,46 +54,50 @@ def formated_board_list():
     print('')
 
 # number to coordinates 
-def get_coordinates(num_input): 
-    row = num_input // 3 
-    col = num_input % 3 
+def get_coordinates(num): 
+    row = num // 3 
+    col = num % 3 
     return row, col
 
 # get valid number
 num_list = [0,1,2,3,4,5,6,7,8]
-def get_valid_num(num_input):
-    if num_input in num_list: 
+def get_valid_num(num):
+    if num in num_list: 
         return True 
     else:
         return False 
 
 # get valid move
-def valid_move(num_input): 
-    row, col = get_coordinates(num_input)
+def valid_move(num): 
+    row, col = get_coordinates(num)
     if board_list[row][col] == ' ': 
         return True
     else:
         return False 
         print('Your chosen spot is not empty. Please try again.')
 
-def computer_move():
-    move = random.choice(empty_spots)
-
 # player move
-def user_move(player): 
-    while True:
-        user_num = int(input('Make a move (number from 0-8): ')) 
-        if get_valid_num(user_num) == True:
-            if valid_move(user_num) == True:
-                row, col = get_coordinates(user_num) 
-                board_list[row][col] = player
-                empty_spots.remove((row, col))
-                break
+def move(assigned_player, player): 
+    if assigned_player == 'user':  
+        while True:
+            num = int(input('Make a move (number from 0-8): ')) 
+            if get_valid_num(num) == True:
+                if valid_move(num) == True:
+                    row, col = get_coordinates(num) 
+                    board_list[row][col] = player
+                    empty_spots.remove((row, col))
+                    break
 
+                else: 
+                    print('This spots is already taken. Please try again.')
             else: 
-                print('This spots is already taken. Please try again.')
-        else: 
-            print('Your input number was invalid. Please try again.')
+                print('Your input number was invalid. Please try again.')
+    if assigned_player == 'computer': 
+        # random number 0-8 that is available 
+            
+        row, col = random.choice(empty_spots) 
+        board_list[row][col] = player
+        empty_spots.remove((row, col))
 
 # fill empyt spots
 def filled_board_list():
@@ -135,11 +139,12 @@ def game():
 
     # game loop 
     player = 'x'
+    assigned_player = 'user'
     while True: 
         formated_board_list()
         print_index_board()
         print(f"It's {player}'s turn.")
-        user_move(player)
+        move(assigned_player, player)
         if check_winner(board_list, player) == True: 
             winner_player = player 
             break
@@ -148,8 +153,10 @@ def game():
             break
         if player == 'x':
             player = 'o'
+            assigned_player = 'computer'
         else: 
             player = 'x' 
+            assigned_player = 'user'
 
     filled_board_list()
 

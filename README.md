@@ -70,16 +70,27 @@
 - [x] create full_board_check 
 - [x] formating board list to '-' all the empty spots
 - [x] create a score board 
-- [ ] resetting board_list when playing another time 
-- [ ] implement player vs player 
-- [ ] creating v2 with less notes for other play modes
+- [x] resetting board_list when playing another time 
+    - simply access every cooridnate and set every spot to ' ' 
+- [x] implement player vs player 
+- [x] creating v2 with less notes for other play modes
+
+## v2
+- [x] o-player shall be asigned to the computer, x regular player 
+    - at this point it would be more effecient to reuse the code by making it more universal (__init__(self)?)
+- [ ] adapt the info output
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
 
-- [ ] work on modes 
-    - [ ] 
-    - [ ]
-    - [ ]
-    - [ ]
 
 ## upgrades
 - [ ] last move should be filled out automatically because it is fix concering a player move 
