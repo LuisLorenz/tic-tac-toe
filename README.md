@@ -78,8 +78,8 @@
 ## v2
 - [x] o-player shall be asigned to the computer, x regular player 
     - at this point it would be more effecient to reuse the code by making it more universal (__init__(self)?)
-- [ ] adapt the info output
-- [ ]
+- [x] adapt the info output
+- [ ] variation option to player vs player 
 - [ ]
 - [ ]
 - [ ]
