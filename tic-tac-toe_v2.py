@@ -76,6 +76,12 @@ def valid_move(num):
         return False 
         print('Your chosen spot is not empty. Please try again.')
 
+# class player
+class player:
+    def __init__(self, symbol, type):
+        self.symbol = symbol
+        self.type = type
+
 # player move
 def move(assigned_player, player): 
     if assigned_player == 'user':  
@@ -99,6 +105,9 @@ def move(assigned_player, player):
         row, col = random.choice(empty_spots) 
         board_list[row][col] = player
         empty_spots.remove((row, col))
+
+    if assigned_player == 'AI':
+        pass 
 
 # fill empyt spots
 def filled_board_list():
@@ -145,26 +154,30 @@ def choose_game_mode():
     -> mode: '''))
     print('')
     if game_mode == 0: 
-        o_player = 'user'
+        x_player = player('x', 'user')
+        o_player = player('o', 'user')
     elif game_mode == 1:
-        o_player = 'computer'
+        x_player = player('x', 'user')
+        o_player = player('o', 'computer')
     elif game_mode == 2: 
-        o_player = 'AI'
+        x_player = player('x', 'user')
+        o_player = player('o', 'AI')
     elif game_mode == 3: 
-        x_player = 'computer'
-        o_player = 'AI'
+        x_player = player('x', 'computer')
+        o_player = player('o', 'AI')
     else:
         print('Your input was invalid. Please try again.')
 
-def game(game_mode):
+player = x_player
+def game(player):
     global x_wins, o_wins
 
     reset_board()
     reset_empty_spots_list()
 
     # game loop 
-    player = 'x'
-    assigned_player = 'user'
+    x_player.symbol = 'x'
+    x_player.type = 'user'
     while True: 
         time.sleep(0.3)
         formated_board_list()
