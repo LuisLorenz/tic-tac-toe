@@ -30,18 +30,18 @@ def check_winner(board_list, player):
 
     # check row
     for row in range(rows): 
-        if all(board_list[row][col] == player for col in range(cols)):
+        if all(board_list[row][col] == player.symbol for col in range(cols)):
             return True
 
     # check col 
     for col in range(cols):
-        if all([board_list[row][col] == player for row in range(rows)]):
+        if all([board_list[row][col] == player.symbol for row in range(rows)]):
             return True
    
     # check diagonals 
-    if all([board_list[row][col] == player for row, col in [(0,0),(1,1),(2,2)]]):
+    if all([board_list[row][col] == player.symbol for row, col in [(0,0),(1,1),(2,2)]]):
         return True
-    elif all([board_list[row][col] == player for row, col in [(0,2),(1,1),(2,0)]]):
+    elif all([board_list[row][col] == player.symbol for row, col in [(0,2),(1,1),(2,0)]]):
         return True
     else: 
         return False
@@ -78,13 +78,14 @@ def valid_move(num):
 
 # class player
 class player:
-    def __init__(self, symbol, type):
+    def __init__(self, symbol, type, wins):
         self.symbol = symbol
         self.type = type
+        self.wins = wins
 
 # player move
-def move(assigned_player, player): 
-    if assigned_player == 'user':  
+def move(player): 
+    if player.type == 'user':  
         while True:
             num = int(input('Make a move (number from 0-8): ')) 
             print('')
@@ -99,14 +100,14 @@ def move(assigned_player, player):
                     print('This spots is already taken. Please try again.')
             else: 
                 print('Your input number was invalid. Please try again.')
-    if assigned_player == 'computer': 
+    if player.type == 'computer': 
         # random number 0-8 that is available 
             
         row, col = random.choice(empty_spots) 
         board_list[row][col] = player
         empty_spots.remove((row, col))
 
-    if assigned_player == 'AI':
+    if player.type == 'AI':
         pass 
 
 # fill empyt spots
@@ -154,82 +155,73 @@ def choose_game_mode():
     -> mode: '''))
     print('')
     if game_mode == 0: 
-        x_player = player('x', 'user')
-        o_player = player('o', 'user')
+        x_player = player('x', 'user', 0)
+        o_player = player('o', 'user', 0)
     elif game_mode == 1:
-        x_player = player('x', 'user')
-        o_player = player('o', 'computer')
+        x_player = player('x', 'user', 0)
+        o_player = player('o', 'computer', 0)
     elif game_mode == 2: 
-        x_player = player('x', 'user')
-        o_player = player('o', 'AI')
+        x_player = player('x', 'user', 0)
+        o_player = player('o', 'AI', 0)
     elif game_mode == 3: 
-        x_player = player('x', 'computer')
-        o_player = player('o', 'AI')
+        x_player = player('x', 'computer', 0)
+        o_player = player('o', 'AI', 0)
     else:
         print('Your input was invalid. Please try again.')
+    return x_player, o_player
 
-player = x_player
+
 def game(player):
-    global x_wins, o_wins
 
     reset_board()
     reset_empty_spots_list()
 
     # game loop 
-    x_player.symbol = 'x'
-    x_player.type = 'user'
     while True: 
         time.sleep(0.3)
         formated_board_list()
         time.sleep(0.3)
-        if assigned_player == 'user':
+        print(player)
+        if player.type == 'user':
             print_index_board()
-            print(f"It's {player}'s turn.")
-        move(assigned_player, player)
+            print(f"It's {player.symbol}'s turn.")
+        move(player)
         if check_winner(board_list, player) == True: 
-            winner_player = player 
+            # winner_player = player
+            player.wins += 1
+            print(f'The winner is {player.symbol}.')  
             break
         if full_board(board_list) == True:
             tie = True 
+            print("It's a tie.")
             break
-        if player == 'x':
-            player = 'o'
-            assigned_player = 'computer'
+        if player == x_player:
+            player = o_player
         else: 
-            player = 'x' 
-            assigned_player = 'user'
-
+            player = x_player 
+            
     filled_board_list()
-
-    # track wins 
-    if winner_player == 'x':  
-        x_wins +=1   
-        print(f'The winner is {winner_player}.') 
-    elif winner_player == 'o':
-        o_wins +=1  
-        print(f'Sorry, you lost. The winner is {winner_player}.')
-    elif tie == True: 
-        print("It's a tie.")
-
+   
     print(f'''Wins:
-    x: {x_wins}
-    o: {o_wins}
+    x: {player.wins}
+    o: {player.wins}
             ''')
-    return x_wins, o_wins
+    
 
 # intro ...
 introduction_text ='''
 Welcome to TIC! TAC! TOE!
 '''
 print(introduction_text)
-choose_game_mode()
-game(game_mode)
+x_player, o_player = choose_game_mode()
+player = x_player
+game(player) # or simply x_player?
 
 # super game loop 
 while True: 
     play_again = input('Do you want to play again? (y/n): ')
     if play_again == 'y':
-        game(game_mode)
+        game(player)
     elif play_again == 'n':
         break 
     else:

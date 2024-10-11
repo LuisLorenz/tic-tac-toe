@@ -15,3 +15,5 @@ x_player = player('x', 'user')
 o_player = player('o', 'computer')
 print(x_player.symbol + ' and ' + x_player.type)
 print(o_player.symbol + ' as well as ' + o_player.type)
+# x and user
+# o as well as computer

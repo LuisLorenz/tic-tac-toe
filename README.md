@@ -80,6 +80,10 @@
     - at this point it would be more effecient to reuse the code by making it more universal (__init__(self)?)
 - [x] adapt the info output
 - [ ] variation option to player vs player 
+    - it is the turn of x_player, user
+    - more efficient something like a class x_player
+        - symbole: 'x' 
+        - assigned player: 'user' 
 - [ ]
 - [ ]
 - [ ]
