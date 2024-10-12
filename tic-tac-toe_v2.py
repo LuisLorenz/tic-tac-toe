@@ -92,7 +92,7 @@ def move(player):
             if get_valid_num(num) == True:
                 if valid_move(num) == True:
                     row, col = get_coordinates(num) 
-                    board_list[row][col] = player
+                    board_list[row][col] = player.symbol 
                     empty_spots.remove((row, col))
                     break
 
@@ -104,7 +104,7 @@ def move(player):
         # random number 0-8 that is available 
             
         row, col = random.choice(empty_spots) 
-        board_list[row][col] = player
+        board_list[row][col] = player.symbol
         empty_spots.remove((row, col))
 
     if player.type == 'AI':
@@ -181,7 +181,6 @@ def game(player):
         time.sleep(0.3)
         formated_board_list()
         time.sleep(0.3)
-        print(player)
         if player.type == 'user':
             print_index_board()
             print(f"It's {player.symbol}'s turn.")
@@ -203,8 +202,8 @@ def game(player):
     filled_board_list()
    
     print(f'''Wins:
-    x: {player.wins}
-    o: {player.wins}
+    x: {x_player.wins}
+    o: {o_player.wins}
             ''')
     
 
@@ -215,7 +214,7 @@ Welcome to TIC! TAC! TOE!
 print(introduction_text)
 x_player, o_player = choose_game_mode()
 player = x_player
-game(player) # or simply x_player?
+game(player) 
 
 # super game loop 
 while True: 
