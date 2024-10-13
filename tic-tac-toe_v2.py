@@ -18,10 +18,15 @@ board_list = [[' ' for x in range(cols)] for y in range(rows)]
 # empty spots list 
 empty_spots = [] 
 def reset_empty_spots_list(): 
+    empty_spots.clear()
     for row in range(rows): 
             for col in range (cols): 
                 if board_list[row][col] == ' ':
                     empty_spots.append((row, col)) 
+# this function alone adds simply (row, col) to the list
+# in case of winning a game before filling up the board completely I keep the rest coordinates in the list
+# as result these accumulate 
+# solution: delete the content of the list before filling it again
 
 # check winner
 def check_winner(board_list, player): 
@@ -188,7 +193,7 @@ def game(player):
         if check_winner(board_list, player) == True: 
             # winner_player = player
             player.wins += 1
-            print(f'The winner is {player.symbol}.')  
+            print(f'The winner is the {player.type} with the player symbol {player.symbol}.')  
             break
         if full_board(board_list) == True:
             tie = True 
@@ -202,7 +207,7 @@ def game(player):
     filled_board_list()
    
     print(f'''Wins:
-    x: {x_player.wins}
+    x: {x_player.wins} 
     o: {o_player.wins}
             ''')
     

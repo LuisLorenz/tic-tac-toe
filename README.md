@@ -84,8 +84,8 @@
     - more efficient something like a class x_player
         - symbole: 'x' 
         - assigned player: 'user' 
-- [ ] debug: random player can exchange filled spots
-- [ ]
+- [x] debug: random player can exchange filled spots
+- [ ] implement AI user 
 - [ ]
 - [ ]
 - [ ]
