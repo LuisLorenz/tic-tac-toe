@@ -85,7 +85,31 @@
         - symbole: 'x' 
         - assigned player: 'user' 
 - [x] debug: random player can exchange filled spots
+
+## v3
 - [ ] implement AI user 
+    - somehow the AI needs to make a imagned move
+    - the AI needs to give each move a value 
+    - as a result it chooses the best move
+
+    Understand the Game: 
+        Make sure you fully understand the rules and mechanics of Tic-Tac-Toe.
+
+    Game Representation: 
+        Decide how you will represent the game board in your code. A 2D array is a common choice.
+
+    Move Generation: 
+        Write a function to generate all possible moves from a given board state.
+
+    Evaluation Function: 
+        Create a function to evaluate the board state. This function should return a score based on whether the board is a win, loss, or draw for the AI.
+
+    Minimax Algorithm: 
+        Implement the Minimax algorithm. This algorithm will recursively evaluate all possible moves and choose the one that maximizes the AI's chances of winning.
+
+    Optimization: 
+        Consider adding alpha-beta pruning to your Minimax algorithm to improve its efficiency.
+
 - [ ]
 - [ ]
 - [ ]
