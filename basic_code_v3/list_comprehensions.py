@@ -1,3 +1,5 @@
+# https://realpython.com/list-comprehension-python/
+
 # for loop -> list 
 squares = []
 for number in range(10):
@@ -22,3 +24,23 @@ print(list(final_prices))
 
 # iterable and func are stored in map()
 # results are stored there
+
+# list comprehension
+squares = [number * number for number in range(10)]
+print(squares)
+# defining the list and adding it's content at the same time
+# new_list = [expression for member in iterable]
+     # expression: method, value etc.
+     # member is the object or value in the list or iterable
+     # iterable: can return element one at a time 
+
+# list comprehension for mapping
+prices = [1.09, 23.56, 57.84, 4.56, 6.78]
+TAX_RATE = .08
+def get_price_with_tax(price):
+     return price * (1 + TAX_RATE)
+
+final_prices = [get_price_with_tax(price) for price in prices]
+     # expression is a method here
+     # goes through all the elements one by one 
+print(final_prices)
