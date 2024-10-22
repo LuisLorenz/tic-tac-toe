@@ -43,4 +43,5 @@ def get_price_with_tax(price):
 final_prices = [get_price_with_tax(price) for price in prices]
      # expression is a method here
      # goes through all the elements one by one 
-print(final_prices)
+     # here a list is created and not map 
+print(final_prices) 
