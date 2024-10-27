@@ -24,3 +24,6 @@ def get_weather_data():
 
 var = [temp for _ in range(20) if (temp := get_weather_data()) >= 100]
 print(var)
+    # [100, 109, 100, 107, 103, 104, 107, 108, 105, 102, 105, 100, 101, 106]
+
+    # the temp var is created and called 
