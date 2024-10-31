@@ -73,3 +73,7 @@ print(timeit.timeit(get_prices_with_comprehension, number=100))
 
 
 print(timeit.timeit(get_prices_with_loop, number=100))
+
+0.5768839580014173
+0.5517941670004802
+0.5881909159998031
