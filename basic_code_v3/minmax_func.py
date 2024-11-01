@@ -17,3 +17,132 @@ print(f'This is the minimum {min(num_list)} and this is the maximum {max(num_lis
 
 # condition for the list elements
     # all the values in the input iterable must be comparable
+        # [3, "5.0", 9, 1.0, "-5"] -> error 
+        # [3, 5.0, 9, 1.0, -5] -> fine 
+
+# multi arg 
+# min(arg_1, arg_2[, ..., arg_n], *[, key]) -> minimum_value
+# max(arg_1, arg_2[, ..., arg_n], *[, key]) -> maximum_value
+    # arg_1, arg_2, ..., arg_n: 	Accepts any number of regular arguments to compare:
+        # at least 2 arg are required 
+        # key: Takes a single-argument function to customize the comparison criteria: 
+            # no requirements 
+
+# min/max on strings
+print(min("abcdefghijklmnopqrstuvwxyz"))
+
+print(max("abcdefghijklmnopqrstuvwxyz"))
+
+print(min("abcdWXYZ"))
+
+print(max("abcdWXYZ"))
+# a
+# z
+# W -> capital letters have a lower a value 
+# d -> lower case letters has a higher value
+
+# min/max on ASCII table 
+print(min("abc123ñ"))
+print(max("abc123ñ"))
+# 1
+# ñ
+
+# the order is based on the unicode number
+# >>> ord("A")
+# 65
+
+# >>> ord("a")
+# 97
+
+# >>> min("aA")
+# 'A'
+
+# >>> max("aA")
+# 'a'
+
+# min/max on a word list
+# >>> min(["Hello", "Pythonista", "and", "welcome", "world"])
+# 'Hello'
+
+# >>> max(["Hello", "Pythonista", "and", "welcome", "world"])
+# 'world'
+
+# min/max on dictionary 
+# >>> prices = {
+# ...    "banana": 1.20,
+# ...    "pineapple": 0.89,
+# ...    "apple": 1.57,
+# ...    "grape": 2.45,
+# ... }
+
+
+# >>> min(prices)
+# 'apple'
+
+# >>> max(prices)
+# 'pineapple'
+
+# >>> calling min/max focues just on the key this way
+# alternative writing 
+    # this option is clearer for the reader to understand 
+# >>> min(prices.keys())
+# 'apple'
+
+# >>> max(prices.keys())
+# 'pineapple'
+
+# min/max on values of dic
+# >>> min(prices.values())
+# 0.89
+# >>> max(prices.values())
+# 2.45
+
+# min/max on key-value pair
+# >>> min(prices.items())
+# ('apple', 1.57)
+# >>> max(prices.items())
+# ('pineapple', 2.45)
+# decision: of (x1, x2), (y1, y2)
+    # first comparison: x1 & y1 
+        # e.g.: x1 < y1 -> max((y1, y2))
+    # if x1 == y1
+        # second comparison: x2 & y2 ... 
+    # in the dic context the first item is always a unic key 
+        # keys are never equal ... 
+
+# using a key 
+# >>> min(["20", "3", "35", "7"])
+# '20'
+# >>> max(["20", "3", "35", "7"])
+# '7'
+# >>> min(["20", "3", "35", "7"], key=int)
+# '3'
+# >>> max(["20", "3", "35", "7"], key=int)
+# '35'
+
+# using default
+# >>> min([], default=42)
+# 42
+# >>> max([], default=42)
+# 42
+# be aware that no error is caused this way!
+
+# combi w/ list comprehensions
+# >>> letters = ["A", "B", "C", "X", "Y", "Z"]
+# >>> min(letters)
+# 'A'
+# >>> min([letter.lower() for letter in letters])
+# 'a'
+# >>> max(letters)
+# 'Z'
+# >>> max([letter.lower() for letter in letters])
+# 'z'
+
+# list comprehension vs key
+# >>> letters = ["A", "B", "C", "X", "Y", "Z"]
+# >>> min([letter.lower() for letter in letters])
+# 'a' 
+# printout is also the transformed data
+# >>> min(letters, key=str.lower)
+# 'A'
+# printout is the original data, choice depends on transformed data
