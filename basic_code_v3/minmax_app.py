@@ -74,17 +74,45 @@
 # finding closest points 
 # Cartesian points (Koordinatensystem)
 
-import math
+# import math
 
-point_pairs = [
-    ((12, 5), (9, 4)),
-    ((2, 5), (3, 7)),
-    ((4, 11), (15, 2))
-]
+# point_pairs = [
+#     ((12, 5), (9, 4)),
+#     ((2, 5), (3, 7)),
+#     ((4, 11), (15, 2))
+# ]
 
-min(point_pairs, key=lambda points: math.dist(*points))
-((2, 5), (3, 7))
+# min(point_pairs, key=lambda points: math.dist(*points))
+# ((2, 5), (3, 7))
 # Euclidean distance (fly route from on point to the next)
-# lambda is just there because math.dist() needs two arg? just a place holder? 
+# lambda is needed for the math operation ... (more an intermediate topic)
 
 # lambda...: https://realpython.com/python-lambda/
+
+
+# identify cheap/expensive products
+# prices = {
+#    "banana": 1.20,
+#    "pineapple": 0.89,
+#    "apple": 1.57,
+#    "grape": 2.45,
+# }
+
+# min(prices.items(), key=lambda item: item[1])
+# ('pineapple', 0.89)
+
+# max(prices.items(), key=lambda item: item[1])
+# ('grape', 2.45)
+
+
+# finding coprime integer numb 
+# def are_coprime(a, b):
+#     for i in range(2, min(a, b) + 1):
+#         if a % i == 0 and b % i == 0:
+#             return False
+#     return True
+
+# are_coprime(2, 3)
+# True 
+# are_coprime(2, 4)
+# False

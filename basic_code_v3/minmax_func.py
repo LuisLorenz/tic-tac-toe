@@ -142,7 +142,19 @@ print(max("abc123ñ"))
 # >>> letters = ["A", "B", "C", "X", "Y", "Z"]
 # >>> min([letter.lower() for letter in letters])
 # 'a' 
-# printout is also the transformed data
+# printout is also the transformed data, choice depends on original data
 # >>> min(letters, key=str.lower)
 # 'A'
 # printout is the original data, choice depends on transformed data
+
+# generator expression > list comprehension
+    # each time the list comprehension run a list is created for min/max
+    # this list takes memory
+    # when you do not need that list in your code then choose 'gen expression' 
+    # e.g.: list comp
+        # min([letter.lower() for letter in letters])
+    # e.g.: gen exp
+        # min(letter.lower() for letter in letters)
+            # no ‘[]‘ here (square brackets)
+            # getting a lower case output 
+    # this structure comes in use when you want to transform the data (upper/lower case) 
