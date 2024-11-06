@@ -92,10 +92,10 @@
     - the AI needs to give each move a value 
     - as a result it chooses the best move
 
-    Understand the Game: 
+- [x] Understand the Game: (go through the code more deeply!!!)
         Make sure you fully understand the rules and mechanics of Tic-Tac-Toe.
 
-    Game Representation: 
+- [x] Game Representation: 
         Decide how you will represent the game board in your code. A 2D array is a common choice.
 
     Move Generation: 
@@ -127,3 +127,12 @@
 
 
 
+Generate All Possible Moves:
+
+Create a function that takes the current board state as input and returns a list of all possible moves. Each move can be represented as a new board state after placing the AI's mark in an empty spot.
+Evaluate Moves:
+
+Implement the Minimax algorithm to evaluate each possible move. The algorithm will recursively simulate all possible future moves, alternating between the AI and the opponent, and assign a score to each move based on the outcome (win, lose, or draw).
+Choose the Best Move:
+
+The AI should choose the move with the highest score (if maximizing) or the lowest score (if minimizing).

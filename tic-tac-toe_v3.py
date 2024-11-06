@@ -225,3 +225,12 @@ while True:
     else:
         print('Your input was invalid. Please try again.')
 
+# all possible moves 
+    # player = 'AI' 
+
+def all_possible_moves(board, player):
+    # input: current board list 
+    # computer makes a move by going through all the empty spots 
+    super_board_list = []
+    
+    pass 
