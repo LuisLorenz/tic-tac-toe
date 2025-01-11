@@ -234,3 +234,5 @@ def all_possible_moves(board, player):
     super_board_list = []
     
     pass 
+
+# my way: 

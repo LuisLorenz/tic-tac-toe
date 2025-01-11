@@ -158,3 +158,5 @@ print(max("abc123ñ"))
             # no ‘[]‘ here (square brackets)
             # getting a lower case output 
     # this structure comes in use when you want to transform the data (upper/lower case) 
+
+# https://realpython.com/python-minimax-nim/

@@ -87,16 +87,13 @@
 - [x] debug: random player can exchange filled spots
 
 ## v3
-- [ ] implement AI user 
-    - somehow the AI needs to make a imagned move
-    - the AI needs to give each move a value 
-    - as a result it chooses the best move
-
 - [x] Understand the Game: (go through the code more deeply!!!)
         Make sure you fully understand the rules and mechanics of Tic-Tac-Toe.
 
 - [x] Game Representation: 
         Decide how you will represent the game board in your code. A 2D array is a common choice.
+
+- [ ] Research minimax alogrithm (implementation)
 
     Move Generation: 
         Write a function to generate all possible moves from a given board state.
@@ -136,3 +133,14 @@ Implement the Minimax algorithm to evaluate each possible move. The algorithm wi
 Choose the Best Move:
 
 The AI should choose the move with the highest score (if maximizing) or the lowest score (if minimizing).
+
+
+# v4
+- [ ] implement unbeatable AI player
+    - then close this project
+    - first the right mode must be selected 
+    - it is about the player move
+        - human decides self is_maximizing == False
+        - AI is_maximizing == True 
+    - [ ] plan it on my JN first 
+    - [ ] 
